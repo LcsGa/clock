@@ -42,9 +42,18 @@
         background: var(--primary);
       }
       &-sec {
+        position: absolute;
         height: var(--n-sec-length);
         width: var(--n-sec-width);
         background: var(--text);
+        &::before {
+          content: "";
+          position: absolute;
+          top: var(--n-sec-length);
+          height: var(--n-sec-short-length);
+          width: var(--n-sec-width);
+          background: var(--text);
+        }
       }
     }
   }

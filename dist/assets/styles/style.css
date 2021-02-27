@@ -35,6 +35,7 @@
     --n-min-length: 24vh;
     --n-min-width: 1vh;
     --n-sec-length: 29vh;
+    --n-sec-short-length: 5vh;
     --n-sec-width: 0.3vh;
     --indicator-diameter: 1.1vh;
     --font-size: 5.5vh;
@@ -57,6 +58,7 @@
     --n-min-length: 24vw;
     --n-min-width: 1vw;
     --n-sec-length: 29vw;
+    --n-sec-short-length: 5vw;
     --n-sec-width: 0.3vw;
     --indicator-diameter: 1.1vw;
     --font-size: 5.5vw;

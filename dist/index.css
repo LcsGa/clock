@@ -40,9 +40,17 @@
       width: var(--n-min-width);
       background: var(--primary); }
     .clock .needle.n-sec {
+      position: absolute;
       height: var(--n-sec-length);
       width: var(--n-sec-width);
       background: var(--text); }
+      .clock .needle.n-sec::before {
+        content: "";
+        position: absolute;
+        top: var(--n-sec-length);
+        height: var(--n-sec-short-length);
+        width: var(--n-sec-width);
+        background: var(--text); }
   .clock .indicator {
     height: var(--indicator-diameter);
     width: var(--indicator-diameter);
