@@ -10,15 +10,15 @@ const setNeedlePosition = (needle) => {
 
   switch (needle) {
     case nHour:
-      time = now.getHours();
-      deg = 360 / 12;
+      const hoursAngle = 360 / 12;
+      deg = now.getHours() * hoursAngle + now.getMinutes() * (hoursAngle / 60);
       break;
     default:
       time = needle === nSec ? now.getSeconds() : now.getMinutes();
-      deg = 360 / 60;
+      deg = time * (360 / 60);
   }
 
-  needle.style.transform = `translateX(-50%) rotate(${time * deg}deg)`;
+  needle.style.transform = `translateX(-50%) rotate(${deg}deg)`;
 };
 
 setInterval(() => {
