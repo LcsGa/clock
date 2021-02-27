@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/assets/styles/style.css" />
+    <link rel="stylesheet" href="./dist/index.css" />
+    <script type="module" src="./src/index.js" defer></script>
+    <title>Horloge</title>
+  </head>
+
+  <body class="theme-dark">
+    <button class="toggle-theme">
+      <span class="full"></span>
+      <span class="stroke"></span>
+    </button>
+    <div class="clock">
+      <div class="needle-container">
+        <div class="pivot"></div>
+        <div class="needle n-hour"></div>
+        <div class="needle n-min"></div>
+        <div class="needle n-sec"></div>
+      </div>
+
+      <div class="indicator-container">
+        <div class="indicator-group group-1">
+          <div class="indicator"></div>
+          <div class="indicator"></div>
+        </div>
+        <div class="indicator-group group-2">
+          <div class="indicator"></div>
+          <div class="indicator"></div>
+        </div>
+        <div class="indicator-group group-3">
+          <div class="indicator"></div>
+          <div class="indicator"></div>
+        </div>
+        <div class="indicator-group group-4">
+          <div class="indicator"></div>
+          <div class="indicator"></div>
+        </div>
+      </div>
+
+      <div class="nb-container">
+        <div class="vertical">
+          <div class="nb nb-12">12</div>
+          <div class="nb nb-6">6</div>
+        </div>
+        <div class="horizontal">
+          <div class="nb nb-9">9</div>
+          <div class="nb nb-3">3</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

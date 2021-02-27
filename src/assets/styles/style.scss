@@ -1,0 +1,11 @@
+@import "./reset";
+@import "./variables";
+@import "./mixins";
+@import "./base";
+
+body {
+  @include centered;
+  height: 100vh;
+  background: var(--background);
+  color: var(--text);
+}

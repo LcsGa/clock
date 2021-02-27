@@ -1,0 +1,29 @@
+@import "./assets/styles/mixins";
+@import "./assets/styles/media-queries";
+@import "./clock";
+
+.toggle-theme {
+  @include centered;
+  position: absolute;
+  top: clamp(1rem, 4vh, 5rem);
+  right: clamp(1rem, 4vh, 5rem);
+  height: var(--toggle-theme-diameter);
+  width: var(--toggle-theme-diameter);
+  background: var(--pivot-bg);
+  box-shadow: var(--pivot-shadow);
+  color: var(--text);
+  border-radius: 50%;
+  span {
+    height: var(--theme-icon-diameter);
+    width: calc(var(--theme-icon-diameter) / 2);
+    &.full {
+      background: var(--text);
+      border-radius: 50vh 0 0 50vh;
+    }
+    &.stroke {
+      border: var(--theme-icon-stroke) solid var(--text);
+      border-left: 0;
+      border-radius: 0 50vh 50vh 0;
+    }
+  }
+}

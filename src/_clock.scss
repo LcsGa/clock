@@ -1,0 +1,104 @@
+.clock {
+  @include centered;
+  height: var(--clock-diameter);
+  width: var(--clock-diameter);
+  border-radius: 50%;
+  border: var(--clock-frame-thickness) solid var(--background);
+  background: var(--clock-bg);
+  box-shadow: var(--clock-shadow);
+  position: relative;
+  & > div {
+    @include centered;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  // needle-container
+  .needle {
+    position: absolute;
+    border-radius: 50vh;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    transform-origin: 50% 100%;
+    box-shadow: var(--needle-light);
+    &-container .pivot {
+      height: var(--pivot-diameter);
+      width: var(--pivot-diameter);
+      border-radius: 50%;
+      background: var(--pivot-bg);
+      box-shadow: var(--pivot-shadow);
+      z-index: 3;
+    }
+    &.n {
+      &-hour {
+        height: var(--n-hour-length);
+        width: var(--n-hour-width);
+        background: var(--dark);
+      }
+      &-min {
+        height: var(--n-min-length);
+        width: var(--n-min-width);
+        background: var(--primary);
+      }
+      &-sec {
+        height: var(--n-sec-length);
+        width: var(--n-sec-width);
+        background: var(--text);
+      }
+    }
+  }
+  // indicator-container
+  .indicator {
+    height: var(--indicator-diameter);
+    width: var(--indicator-diameter);
+    background: var(--text);
+    border-radius: 50%;
+    &-container {
+      @include centered;
+    }
+    &-group {
+      width: 94%;
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      transform-origin: 50% 50%;
+      &.group {
+        &-1 {
+          transform: rotate(30deg);
+        }
+        &-2 {
+          transform: rotate(60deg);
+        }
+        &-3 {
+          transform: rotate(-30deg);
+        }
+        &-4 {
+          transform: rotate(-60deg);
+        }
+      }
+    }
+  }
+  // number-container
+  .nb {
+    font-size: var(--font-size);
+    &-container {
+      .vertical,
+      .horizontal {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+      }
+      .vertical {
+        padding: var(--nb-padding-v);
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+      }
+      .horizontal {
+        padding: var(--nb-padding-h);
+        width: 100%;
+      }
+    }
+  }
+}

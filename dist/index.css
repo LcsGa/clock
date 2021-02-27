@@ -1,0 +1,107 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--clock-diameter);
+  width: var(--clock-diameter);
+  border-radius: 50%;
+  border: var(--clock-frame-thickness) solid var(--background);
+  background: var(--clock-bg);
+  box-shadow: var(--clock-shadow);
+  position: relative; }
+  .clock > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+  .clock .needle {
+    position: absolute;
+    border-radius: 50vh;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    transform-origin: 50% 100%;
+    box-shadow: var(--needle-light); }
+    .clock .needle-container .pivot {
+      height: var(--pivot-diameter);
+      width: var(--pivot-diameter);
+      border-radius: 50%;
+      background: var(--pivot-bg);
+      box-shadow: var(--pivot-shadow);
+      z-index: 3; }
+    .clock .needle.n-hour {
+      height: var(--n-hour-length);
+      width: var(--n-hour-width);
+      background: var(--dark); }
+    .clock .needle.n-min {
+      height: var(--n-min-length);
+      width: var(--n-min-width);
+      background: var(--primary); }
+    .clock .needle.n-sec {
+      height: var(--n-sec-length);
+      width: var(--n-sec-width);
+      background: var(--text); }
+  .clock .indicator {
+    height: var(--indicator-diameter);
+    width: var(--indicator-diameter);
+    background: var(--text);
+    border-radius: 50%; }
+    .clock .indicator-container {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .clock .indicator-group {
+      width: 94%;
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      transform-origin: 50% 50%; }
+      .clock .indicator-group.group-1 {
+        transform: rotate(30deg); }
+      .clock .indicator-group.group-2 {
+        transform: rotate(60deg); }
+      .clock .indicator-group.group-3 {
+        transform: rotate(-30deg); }
+      .clock .indicator-group.group-4 {
+        transform: rotate(-60deg); }
+  .clock .nb {
+    font-size: var(--font-size); }
+    .clock .nb-container .vertical,
+    .clock .nb-container .horizontal {
+      position: absolute;
+      display: flex;
+      justify-content: space-between; }
+    .clock .nb-container .vertical {
+      padding: var(--nb-padding-v);
+      flex-direction: column;
+      align-items: center;
+      height: 100%; }
+    .clock .nb-container .horizontal {
+      padding: var(--nb-padding-h);
+      width: 100%; }
+
+.toggle-theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: clamp(1rem, 4vh, 5rem);
+  right: clamp(1rem, 4vh, 5rem);
+  height: var(--toggle-theme-diameter);
+  width: var(--toggle-theme-diameter);
+  background: var(--pivot-bg);
+  box-shadow: var(--pivot-shadow);
+  color: var(--text);
+  border-radius: 50%; }
+  .toggle-theme span {
+    height: var(--theme-icon-diameter);
+    width: calc(var(--theme-icon-diameter) / 2); }
+    .toggle-theme span.full {
+      background: var(--text);
+      border-radius: 50vh 0 0 50vh; }
+    .toggle-theme span.stroke {
+      border: var(--theme-icon-stroke) solid var(--text);
+      border-left: 0;
+      border-radius: 0 50vh 50vh 0; }
